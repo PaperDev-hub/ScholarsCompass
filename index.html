@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Scholar Compass NP</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header>
+  <div class="logo">Scholar Compass NP <span>by GM Studios</span></div>
+  <div class="pill-badge">110+ colleges</div>
+</header>
+
+<div class="container">
+  <div class="prog-wrap">
+    <div class="prog-meta">
+      <span class="prog-label" id="prog-label">Faculty</span>
+      <span class="prog-count" id="prog-count">Step 1 of 7</span>
+    </div>
+    <div class="prog-bar"><div class="prog-fill" id="prog" style="width:0%"></div></div>
+  </div>
+
+  <!-- Step 1: Faculty -->
+  <div class="step active" id="s1">
+    <div class="step-q">What faculty are you interested in?</div>
+    <div class="step-hint">Choose the broad faculty area that excites you.</div>
+    <div class="opts">
+      <div class="opt" data-s="1" data-v="Science"><span class="ico">🔬</span><span class="lbl">Science</span></div>
+      <div class="opt" data-s="1" data-v="Engineering & Technology"><span class="ico">⚙️</span><span class="lbl">Engineering & Tech</span></div>
+      <div class="opt" data-s="1" data-v="Management & Business"><span class="ico">📊</span><span class="lbl">Management</span></div>
+      <div class="opt" data-s="1" data-v="Humanities & Social Science"><span class="ico">📜</span><span class="lbl">Humanities</span></div>
+      <div class="opt" data-s="1" data-v="Medicine & Health"><span class="ico">🩺</span><span class="lbl">Medicine & Health</span></div>
+      <div class="opt" data-s="1" data-v="Law"><span class="ico">⚖️</span><span class="lbl">Law</span></div>
+      <div class="opt" data-s="1" data-v="Education"><span class="ico">📚</span><span class="lbl">Education</span></div>
+      <div class="opt" data-s="1" data-v="IT & Computer Science"><span class="ico">💻</span><span class="lbl">IT & CS</span></div>
+      <div class="opt" data-s="1" data-v="Forestry & Environment"><span class="ico">🌲</span><span class="lbl">Forestry & Environment</span></div>
+      <div class="opt" data-s="1" data-v="Agriculture"><span class="ico">🌾</span><span class="lbl">Agriculture</span></div>
+      <div class="opt" data-s="1" data-v="Arts & Design"><span class="ico">🎨</span><span class="lbl">Arts & Design</span></div>
+    </div>
+    <div class="nav"><span></span><button class="btn" id="n1" onclick="go(2)" disabled>Next →</button></div>
+  </div>
+
+  <!-- Step 2: Subject -->
+  <div class="step" id="s2">
+    <div class="step-q">What do you want to study?</div>
+    <div class="step-hint">Pick the specific program you're aiming for.</div>
+    <div class="opts" id="subject-opts"></div>
+    <div class="nav"><button class="btn-out" onclick="go(1)">← Back</button><button class="btn" id="n2" onclick="go(3)" disabled>Next →</button></div>
+  </div>
+
+  <!-- Step 3: Level -->
+  <div class="step" id="s3">
+    <div class="step-q">What level are you applying for?</div>
+    <div class="step-hint">Choose your current academic stage.</div>
+    <div class="opts">
+      <div class="opt" data-s="3" data-v="+2"><span class="ico">📘</span><span class="lbl">+2 / Grade 11–12</span><span class="dsc">Higher secondary</span></div>
+      <div class="opt" data-s="3" data-v="Bachelor's"><span class="ico">🎓</span><span class="lbl">Bachelor's</span><span class="dsc">Undergraduate</span></div>
+      <div class="opt" data-s="3" data-v="Master's"><span class="ico">🏅</span><span class="lbl">Master's</span><span class="dsc">Postgraduate</span></div>
+    </div>
+    <div class="nav"><button class="btn-out" onclick="go(2)">← Back</button><button class="btn" id="n3" onclick="go(4)" disabled>Next →</button></div>
+  </div>
+
+  <!-- Step 4: Location -->
+  <div class="step" id="s4">
+    <div class="step-q">Where do you want to study?</div>
+    <div class="step-hint">Select one or more preferred locations.</div>
+    <div class="loc-grid">
+      <div class="loc-opt" data-s="4" data-v="Kathmandu Valley"><span class="lbl">Kathmandu Valley</span><span class="dsc">Kathmandu, Lalitpur, Bhaktapur</span></div>
+      <div class="loc-opt" data-s="4" data-v="Pokhara"><span class="lbl">Pokhara</span><span class="dsc">Gandaki Province</span></div>
+      <div class="loc-opt" data-s="4" data-v="Eastern Nepal"><span class="lbl">Eastern Nepal</span><span class="dsc">Biratnagar, Dharan, Jhapa</span></div>
+      <div class="loc-opt" data-s="4" data-v="Central Nepal"><span class="lbl">Central Nepal</span><span class="dsc">Chitwan, Hetauda, Bharatpur</span></div>
+      <div class="loc-opt" data-s="4" data-v="Butwal"><span class="lbl">Butwal</span><span class="dsc">Rupandehi, Lumbini Zone</span></div>
+      <div class="loc-opt" data-s="4" data-v="Bhairahawa"><span class="lbl">Bhairahawa</span><span class="dsc">Siddharthanagar area</span></div>
+      <div class="loc-opt" data-s="4" data-v="Nepalgunj"><span class="lbl">Nepalgunj</span><span class="dsc">Banke, Mid-Western Terai</span></div>
+      <div class="loc-opt" data-s="4" data-v="Any location"><span class="lbl">Any location</span><span class="dsc">Open to anywhere in Nepal</span></div>
+    </div>
+    <div class="nav"><button class="btn-out" onclick="go(3)">← Back</button><button class="btn" id="n4" onclick="go(5)" disabled>Next →</button></div>
+  </div>
+
+  <!-- Step 5: Learning style -->
+  <div class="step" id="s5">
+    <div class="step-q">How do you prefer to learn?</div>
+    <div class="step-hint">Pick the style that fits you best.</div>
+    <div class="opts">
+      <div class="opt" data-s="5" data-v="Hands-on & practical"><span class="ico">🔧</span><span class="lbl">Hands-on</span><span class="dsc">Labs, projects, fieldwork</span></div>
+      <div class="opt" data-s="5" data-v="Research & theory"><span class="ico">📖</span><span class="lbl">Research & theory</span><span class="dsc">Reading & analysis</span></div>
+      <div class="opt" data-s="5" data-v="Creative & expressive"><span class="ico">✏️</span><span class="lbl">Creative</span><span class="dsc">Design, art, writing</span></div>
+      <div class="opt" data-s="5" data-v="Group discussions"><span class="ico">🗣️</span><span class="lbl">Discussion-based</span><span class="dsc">Seminars, debates</span></div>
+    </div>
+    <div class="nav"><button class="btn-out" onclick="go(4)">← Back</button><button class="btn" id="n5" onclick="go(6)" disabled>Next →</button></div>
+  </div>
+
+  <!-- Step 6: Grades -->
+  <div class="step" id="s6">
+    <div class="step-q">How are your grades?</div>
+    <div class="step-hint">Be honest — this helps us find the right fit for you.</div>
+    <div class="opts">
+      <div class="opt" data-s="6" data-v="Excellent"><span class="ico">⭐</span><span class="lbl">Excellent</span><span class="dsc">Top of class / A+</span></div>
+      <div class="opt" data-s="6" data-v="Good"><span class="ico">👍</span><span class="lbl">Good</span><span class="dsc">Above average / B+</span></div>
+      <div class="opt" data-s="6" data-v="Average"><span class="ico">📈</span><span class="lbl">Average</span><span class="dsc">Solid, room to grow</span></div>
+      <div class="opt" data-s="6" data-v="Needs improvement"><span class="ico">💪</span><span class="lbl">Still growing</span><span class="dsc">Working on it</span></div>
+    </div>
+    <div class="nav"><button class="btn-out" onclick="go(5)">← Back</button><button class="btn" id="n6" onclick="go(7)" disabled>Next →</button></div>
+  </div>
+
+  <!-- Step 7: Goal -->
+  <div class="step" id="s7">
+    <div class="step-q">What's your goal after college?</div>
+    <div class="step-hint">This helps us match you to the right outcomes.</div>
+    <div class="opts">
+      <div class="opt" data-s="7" data-v="Get a job quickly"><span class="ico">💼</span><span class="lbl">Get a job fast</span></div>
+      <div class="opt" data-s="7" data-v="Start my own business"><span class="ico">🚀</span><span class="lbl">Start a business</span></div>
+      <div class="opt" data-s="7" data-v="Further studies"><span class="ico">🎓</span><span class="lbl">Further studies</span></div>
+      <div class="opt" data-s="7" data-v="Serve my community"><span class="ico">🤝</span><span class="lbl">Serve community</span></div>
+    </div>
+    <div class="nav"><button class="btn-out" onclick="go(6)">← Back</button><button class="btn" id="n7" onclick="showResults()" disabled>Find my colleges →</button></div>
+  </div>
+
+  <!-- Results -->
+  <div class="step" id="sR">
+    <div class="results-header">
+      <h2>Your college matches</h2>
+      <p id="rsub"></p>
+    </div>
+    <div id="rcont"></div>
+    <div class="results-actions">
+      <button class="btn-out" onclick="restart()">← Start over</button>
+    </div>
+    <p class="disclaimer">Results are based on automated analysis for informational purposes only and do not guarantee admission. Please verify all details directly with the colleges before making any decisions.</p>
+  </div>
+</div>
+
+<footer>Scholar Compass NP &nbsp;·&nbsp; Built by GM Studios &nbsp;·&nbsp; Data is for guidance only. Always verify with the college directly.</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
